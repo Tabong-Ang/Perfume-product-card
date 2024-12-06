@@ -1,0 +1,188 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+  /* font-size: clamp(0.8rem, 0.8rem + 1vw, 3rem); */
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--Cream);
+}
+
+.main-content {
+  background-color: var(--White);
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto;
+  width: 600px;
+}
+
+.notes {
+  padding: 1em 2em;
+}
+
+.main-content,
+button {
+  border-radius: 0.75em;
+}
+
+img {
+  height: 100%;
+  width: 70vw;
+  border-radius: 0.75em 0 0 0.75em;
+}
+
+h6,
+p,
+span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--Dark-grayish-blue);
+  margin-block-start: 1em;
+}
+
+h1 {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  color: var(--Very-dark-blue);
+  line-height: 1;
+  margin-block-start: 0.5em;
+  vertical-align: middle;
+  margin-block-end: 2rem;
+}
+
+.price {
+  color: var(--Dark-cyan);
+}
+
+span {
+  stroke: var(--Very-dark-blue);
+  font-size: 0.875rem;
+  margin-inline-start: 2rem;
+  vertical-align: middle;
+}
+
+button {
+  padding: 1em 0;
+  width: 100%;
+  background-color: var(--Dark-cyan);
+  display: flex;
+  justify-content: center;
+  color: var(--White);
+  margin: 1em auto 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  border-style: none;
+}
+
+svg {
+  width: 1.5rem;
+}
+
+svg.custom-class {
+  path {
+    fill: var(--White);
+  }
+}
+
+@media (max-width: 48em) {
+  .main-content {
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+  }
+
+  body {
+    padding: 2em 0;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-block-end: auto;
+  }
+
+  img {
+    width: 100vw;
+    border-radius: 0.75em 0.75em 0 0;
+  }
+
+  .notes {
+    padding: 1em;
+  }
+}
